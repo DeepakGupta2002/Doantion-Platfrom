@@ -104,9 +104,11 @@ function getLocales(?string $from = null, bool $includeNonLocales = false): arra
 	
 	// Get available|installed locales from the server
 	if ($isFromInstalled || $isFromMerged) {
-		try {
-			exec('locale -a', $locales);
-		} catch (Throwable $e) {
+		if (PHP_OS_FAMILY !== 'Windows') {
+			try {
+				exec('locale -a', $locales);
+			} catch (Throwable $e) {
+			}
 		}
 	}
 	

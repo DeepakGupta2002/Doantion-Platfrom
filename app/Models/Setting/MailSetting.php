@@ -27,7 +27,8 @@ class MailSetting
 		$value = is_array($value) ? $value : [];
 		
 		$defaultValue = [
-			'sendmail_path' => config('mail.mailers.sendmail.path'),
+			'sendmail_path'       => config('mail.mailers.sendmail.path'),
+			'email_verification'  => '1',
 		];
 		
 		return array_merge($defaultValue, $value);

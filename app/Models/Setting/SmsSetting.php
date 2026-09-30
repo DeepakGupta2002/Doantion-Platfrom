@@ -55,7 +55,7 @@ class SmsSetting
 			'twilio_alpha_sender'        => env('TWILIO_ALPHA_SENDER', ''),
 			'twilio_sms_service_sid'     => env('TWILIO_SMS_SERVICE_SID', ''),
 			'twilio_debug_to'            => env('TWILIO_DEBUG_TO', ''),
-			'phone_verification'         => '1',
+			'phone_verification'         => '0',
 		];
 		
 		return array_merge($defaultValue, $value);
